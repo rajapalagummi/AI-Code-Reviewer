@@ -1,0 +1,103 @@
+/* AI Code Reviewer — Custom Styles */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+
+/* ── Root variables ─────────────────────────────────────────── */
+:root {
+  --bg: #0f1117;
+  --surface: #1a1d27;
+  --border: #2a2d3a;
+  --accent: #38bdf8;
+  --text: #e2e8f0;
+  --muted: #64748b;
+  --font-display: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  /* Severity — only 3 colors */
+  --critical: #ef4444;
+  --high:     #f97316;
+  --medium:   #facc15;
+  --low:      #94a3b8;
+  --info:     #64748b;
+}
+
+/* ── Header ─────────────────────────────────────────────────── */
+.header-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 0 0.5rem;
+}
+.header-icon { font-size: 2rem; }
+.header-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin: 0;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+.header-sub {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
+/* ── Score badge ─────────────────────────────────────────────── */
+.score-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  width: fit-content;
+  min-width: 90px;
+  background: var(--surface);
+}
+.score-number {
+  font-family: var(--font-mono);
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 1;
+}
+.score-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+/* ── Issue cards ─────────────────────────────────────────────── */
+.issue-card {
+  font-family: var(--font-sans) !important;
+  font-size: 0.9rem;
+}
+.severity-badge {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+}
+
+/* ── Streamlit overrides ─────────────────────────────────────── */
+.stTextArea textarea {
+  font-family: var(--font-mono) !important;
+  font-size: 0.85rem !important;
+}
+.stButton > button[kind="primary"] {
+  background: #1e293b !important;
+  border: 1px solid var(--accent) !important;
+  color: var(--accent) !important;
+  font-family: var(--font-mono) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em;
+  transition: background 0.2s;
+}
+.stButton > button[kind="primary"]:hover {
+  background: #0f172a !important;
+}
